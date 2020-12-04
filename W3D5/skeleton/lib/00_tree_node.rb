@@ -1,5 +1,5 @@
 class PolyTreeNode
-    attr_reader :value, :parent, :children
+    attr_accessor :value, :parent, :children
 
     def initialize(value)
         @value = value
@@ -8,9 +8,31 @@ class PolyTreeNode
     end
 
     def parent=(node)
-        @parent = node
         
-         node.children << self unless node.children.include?(self)
+        if node != nil
+            @parent = node
+            class PolyTreeNode
+                attr_accessor :value, :parent, :children
+            
+                def initialize(value)
+                    @value = value
+                    @parent = nil
+                    @children = []
+                end
+            
+                def parent=(node)
+                    if node != nil
+                        @parent = node
+                        @children.shift
+                        node.children << self unless node.children.include?(self)
+                    else
+                        @parent = node
+                    end
+                end
+            end
+            node.children << self unless node.children.include?(self)
+        else
+            @parent = node
         end
     end
 end
