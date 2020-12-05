@@ -25,7 +25,19 @@ class PolyTreeNode
     end
 
     def remove_child(child_node)
+        if child_node.parent == nil
+            raise "node is not a child"
+        end
         child_node.parent = nil
+    end
+
+    def dfs(target)
+        return self if @value == target
+        @parent.each do |child|
+            result = dfs(child, target)
+            child if result != nil
+        end
+
     end
 
 end
