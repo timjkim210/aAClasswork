@@ -29,7 +29,14 @@ class KnightPathFinder
         possible_moves
     end
 
-    
+    def build_move_tree
+        queue = [@root_node]
+
+        until queue.empty?
+            new_positions = self.new_move_positions(@root_node.pos)
+    end
+
+
 
 
 
