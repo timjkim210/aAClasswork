@@ -1,5 +1,6 @@
-require_relative 'tree_node.rb'
+require_relative '../skeleton/lib/00_tree_node.rb'
 class KnightPathFinder
+    attr_reader :considered_positions
     def initialize(start_pos)
         @root_node = PolyTreeNode.new(start_pos)
         @considered_positions = [start_pos]
@@ -33,10 +34,21 @@ class KnightPathFinder
         queue = [@root_node]
 
         until queue.empty?
-            new_positions = self.new_move_positions(@root_node.pos)
+            current_node = queue.shift
+            self.new_move_positions(current_node.value).each do |pos|
+            #create a polytree node with each pos
+            #shovel node to queue, make node child of current node
+            new_node = PolyTreeNode.new(pos)
+            queue << new_node
+            current_node.add_child(new_node)
+
+            end
+        end
     end
 
-
+    def find_path(end_pos)
+        @root_node.dfs(end_pos)
+    end
 
 
 
@@ -49,6 +61,7 @@ class KnightPathFinder
 end
 
 new_thing = KnightPathFinder.new([0,0])
-p new_thing.new_move_positions([0, 0])
-p new_thing.new_move_positions([0, 0])
 
+
+ new_thing.build_move_tree
+ p new_thing.find_path([4,2])
