@@ -1,6 +1,7 @@
 class Employee
-    attr_reader :salary
-    def initialize(name, title, salary,boss)
+    attr_reader :salary 
+    attr_accessor :boss
+    def initialize(name, title, salary,boss = nil)
         @name = name
         @title = title  
         @salary = salary
@@ -12,13 +13,18 @@ class Employee
         @salary = @salary * mult
 
     end
+
+    def boss=(boss)
+        self.boss = boss 
+        boss.employees << self
+    end
 end
 
 class Manager < Employee
 
-    def initialize(employees)
+    def initialize
         super
-        @employees = employees
+        @employees = []
     end
 
     def bonus(mult)
@@ -30,17 +36,17 @@ class Manager < Employee
         total * mult
     end
 
-    def subordinate(sub_subordinate)
-        until @boss.nil?
-        @employees << sub_subordinate
-    end
+    # def subordinate(sub_subordinate)
+    #     until @boss.nil?
+    #         @employees << sub_subordinate
+    # end
 
 end
 
 
-p ned = Employee.new('Ned', 'Founder', 1000000, nil)
-p darren = Employee.new('Darren', 'TA Manager', 78000, 'Ned')
-p david = Employee.new('David', 'TA', 10000, 'Darren')
-p ned.bonus(5) # => 500_000
-p darren.bonus(4) # => 88_000
-p david.bonus(3) # => 30_000
+# p ned = Manager.new('Ned', 'Founder', 1000000, nil)
+# p darren = Manager.new('Darren', 'TA Manager', 78000, 'Ned')
+david = Employee.new('David', 'TA', 10000)
+# p ned.bonus(5) # => 500_000
+# p darren.bonus(4) # => 88_000
+david.bonus(3) # => 30_000
