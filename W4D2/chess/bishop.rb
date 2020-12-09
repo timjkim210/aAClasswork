@@ -1,12 +1,12 @@
-class Rook < Piece
+class Bishop < Piece
     include Slideable
 
     def symbol
-        '♖'
+        '♝'
     end
 
     def move_dirs
-        self.horizontal_dirs
+        self.diagonal_dirs
     end
 
 end
