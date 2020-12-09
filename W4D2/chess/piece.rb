@@ -9,4 +9,8 @@ class Piece
     def moves
 
     end
+
+    def empty?
+        
+    end
 end
