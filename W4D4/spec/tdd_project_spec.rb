@@ -53,14 +53,28 @@ describe TowersOfHanoi do
     end
 
     describe 'play' do
-        
+        hanoi = TowersOfHanoi.new
+        it 'checks if won? is being called' do
+            expect(hanoi).to receive(:won?)
+        end
+    end
+
+    describe '#top?' do
+        hanoi = TowersOfHanoi.new
+        it 'checks if the disc chosen is on top' do
+            expect(hanoi.top?(1)).to be true
+            expect(hanoi.top?(3)).to be false
+        end
+
     end
 
     describe 'move' do 
-        hanoi = TowersOfHanoi.new
+        let(:hanoi) {TowersOfHanoi.new}
+        # hanoi = TowersOfHanoi.new
         it "should move top disc to another tower" do
             expect(hanoi.move(1,1)).to eq([[2,3],[1],[]])
         end
+        
 
     end
 
