@@ -19,3 +19,16 @@ class Array
     end
 
 end
+
+def my_transpose(arr)
+    result = []
+    (0...arr.length).each do |idx|
+        sub_arr = []
+        (0...arr.length).each do |idx2|
+        sub_arr << arr[idx2][idx]
+        end
+        result << sub_arr
+    end
+    result
+end
+
