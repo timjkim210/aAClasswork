@@ -28,15 +28,15 @@ module Slideable
 
     def grow_unblocked_moves_in_dir(dx, dy) 
         moves = []
-        x, y = pos # start pos [0,0]
+        x, y = self.pos # start pos [0,0]
                     # dx, dy [1, 1]
         while true
-            current_x = x + dx #1
-            current_y = y + dy #1
-            current_pos = [current_x,current_y] #[1,1]
-            if board.empty?(current_pos) # ?????
+            x = x + dx #1
+            y = y + dy #1
+            current_piece = @board[[x,y]]#[1,1]
+            if board.valid_pos?([x,y]) # ?????
                 moves << current_pos
-            elsif current_pos.color != self.color #????
+            elsif current_piece.color != self.color #????
                 moves << current_pos
                 break
             end
