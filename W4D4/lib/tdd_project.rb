@@ -47,14 +47,42 @@ def stock_picker(arr)
 end
 
 class TowersOfHanoi
+    attr_reader :towers
+    
     def initialize
         @towers = [[1,2,3],[],[]]
     end
 
     def play
+        until won?
+            puts 'Which disc would you like to move?'
+            disc = gets.chomp.to_i
+            if top?(disc)
+                puts 'Where would you like to move it?'
+                pos = gets.chomp.to_i
+                move(disc, pos)
+            else
+                puts 'Cant move that disc, please choose another disc'
+            end
+        end
     end
 
-    def move
+    def top?(disc)
+        @towers.each do |row|
+            if row.first == disc
+                return true
+            end
+        end
+        false
+    end
+
+    def move(disc, pos)
+        @towers.each do |row|
+            if row.include?(disc)
+                top_disc = row.shift
+            end
+        end
+        @towers[pos] << top_disc
     end
 
     def won?

@@ -44,6 +44,14 @@ end
 # end
 
 describe TowersOfHanoi do 
+    describe '#initialize' do
+        hanoi = TowersOfHanoi.new
+        it 'make towers' do
+            expect(hanoi.towers).to eq([[1,2,3],[],[]])
+        end
+
+    end
+
     describe 'play' do
     end
 
