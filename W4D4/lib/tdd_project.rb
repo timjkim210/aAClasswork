@@ -8,4 +8,14 @@ class Array
         uniq
     end
 
+    def two_sum
+        arr = []
+        self.each_with_index do |ele, idx1|
+            self.each_with_index do |ele2, idx2|
+                arr << [idx1, idx2] if idx2 > idx1 && ele + ele2 == 0
+            end
+        end
+        arr
+    end
+
 end
