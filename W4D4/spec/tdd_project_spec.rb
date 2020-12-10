@@ -53,11 +53,21 @@ describe TowersOfHanoi do
     end
 
     describe 'play' do
+        
     end
 
-    desribe 'move' do 
+    describe 'move' do 
+        hanoi = TowersOfHanoi.new
+        it "should move top disc to another tower" do
+            expect(hanoi.move(1,1)).to eq([[2,3],[1],[]])
+        end
+
     end
 
     describe 'won?'do
+        hanoi = TowersOfHanoi.new
+        it "checks for full tower" do
+            expect(hanoi.won?).to be true
+        end
     end
 end

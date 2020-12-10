@@ -79,10 +79,11 @@ class TowersOfHanoi
     def move(disc, pos)
         @towers.each do |row|
             if row.include?(disc)
-                top_disc = row.shift
+                row.shift
             end
         end
-        @towers[pos] << top_disc
+        @towers[pos] << disc
+        @towers
     end
 
     def won?
