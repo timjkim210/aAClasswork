@@ -26,3 +26,14 @@ describe "my_transpose(arr)" do
         expect(my_transpose(rows)).to eq([[0, 3, 6],[1, 4, 7],[2, 5, 8]])
     end
 end
+
+describe "stock_picker(arr)" do
+    prices = [5, 675, 9999, 30, 67, 8999]
+    it 'finds the most profitable pair of days' do
+        expect(stock_picker(prices)).to eq([0,2])
+    end
+end
+
+describe "towers_of_hanoi(arr)" do
+    arr = Array.new(3) {Array.new(3)}
+end

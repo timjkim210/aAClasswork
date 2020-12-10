@@ -32,3 +32,16 @@ def my_transpose(arr)
     result
 end
 
+def stock_picker(arr)
+    max_profit = 0
+    pair = []
+    arr.each_with_index do |ele, idx1|
+        arr.each_with_index do |ele2, idx2|
+            if idx2 > idx1 && ele2 - ele > max_profit
+                max_profit = ele2 - ele
+                pair = [idx1, idx2]
+            end
+        end
+    end
+    pair
+end
