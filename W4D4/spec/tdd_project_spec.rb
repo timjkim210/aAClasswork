@@ -34,6 +34,22 @@ describe "stock_picker(arr)" do
     end
 end
 
-describe "towers_of_hanoi(arr)" do
-    arr = Array.new(3) {Array.new(3)}
+# describe "towers_of_hanoi(arr)" do
+#     arr = [[1,2,3],[],[]]
+#     # it 'checks the starting array' do
+#     #     expect(arr).to eq([[1,2,3],[],[]])
+#     # end
+
+
+# end
+
+describe TowersOfHanoi do 
+    describe 'play' do
+    end
+
+    desribe 'move' do 
+    end
+
+    describe 'won?'do
+    end
 end

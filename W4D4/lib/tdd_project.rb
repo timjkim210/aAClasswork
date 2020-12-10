@@ -45,3 +45,19 @@ def stock_picker(arr)
     end
     pair
 end
+
+class TowersOfHanoi
+    def initialize
+        @towers = [[1,2,3],[],[]]
+    end
+
+    def play
+    end
+
+    def move
+    end
+
+    def won?
+        @towers.any? {|tower| tower == [1,2,3]}
+    end
+end
