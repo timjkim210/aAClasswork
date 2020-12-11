@@ -1,18 +1,19 @@
 
 module Phase1
-  def my_min(list)
+  def self.my_min(list)
     list.each do |ele1|
-      return ele1 if list.all? { |ele2| ele1 < ele2 }
+      return ele1 if list.all? { |ele2| ele1 <= ele2 }
     end
   end
 
-  def largest_contiguous_subsum(list)
+  def self.largest_contiguous_subsum(list) # O(n^3)
     sub_arrs = subarrays(list)
     sub_sums = sub_arrs.map {|sub_arr| sub_arr.sum}
     sub_sums.max
   end
 
-  def subarrays(array)
+  private
+  def self.subarrays(array)
     result = []
     (0...array.length).each do |idx1|
         (idx1+1...array.length).each do |idx2|
@@ -24,7 +25,7 @@ module Phase1
 end
 
 module Phase2
-  def my_min(list)
+  def self.my_min(list)
     smallest = nil
     list.each do |ele1|
       if smallest == nil || ele1 < smallest
@@ -34,18 +35,23 @@ module Phase2
     return smallest
   end
 
-#[1, 2, 3, -10, 5, -2, -5]
+    def self.largest_contiguous_subsum(list)
+    first, *rest                  = list
 
+    contiguous_subsum             = first
+    largest_contiguous_subsum     = first
 
-  def largest_contiguous_subsum(list)
-    idx = 0
-    largest_sum = 0
-    while idx < list.length
-
-        largest_sum = sum if sum > largest_sum
-        idx += 1
+    rest.each do |num|
+      if contiguous_subsum        < 0
+        contiguous_subsum         = num
+      else
+        contiguous_subsum        += num
+      end
+      if contiguous_subsum        > largest_contiguous_subsum
+        largest_contiguous_subsum = contiguous_subsum
+      end
     end
-    largest_sum
+    return largest_contiguous_subsum
   end
 end
 
