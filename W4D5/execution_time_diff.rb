@@ -36,12 +36,13 @@ module Phase2
   end
 
     def self.largest_contiguous_subsum(list)
-    first, *rest                  = list
+    first                         = list[0]
 
     contiguous_subsum             = first
     largest_contiguous_subsum     = first
 
-    rest.each do |num|
+    (1...list.length).each do |idx|
+      num = list[idx]
       if contiguous_subsum        < 0
         contiguous_subsum         = num
       else
