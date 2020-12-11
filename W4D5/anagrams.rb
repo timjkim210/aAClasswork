@@ -3,8 +3,11 @@ def first_anagram?(string1, string2)
     anagrams.include?(string2)
 end
 
-def all_anagrams(string)
-    return [string] if string == ''
+# all of this work... all of this pain... and
+# string.chars.permutation.to_a.map { |subarr| subarr.join('') }
+# could just do for us 😭😭. I am despondent.
+def all_anagrams(string)   
+    return [string] if string == '' 
     previous_anagrams = all_anagrams(string[1..-1])
 
     result = []
@@ -18,6 +21,19 @@ def all_anagrams(string)
     result
 end
 
+def second_anagram?(string1,string2)
+  string1.chars.each do |char|
+    idx = string2.chars.find_index(char)
+    return false if idx.nil?
+    string2.slice!(idx)
+  end
+  string2 == ""
+end
 
+def third_anagram?(string1,string2)
+    arr1 = string1.chars.sort
+    arr2 = string2.chars.sort
 
+    arr1 == arr2
+end
 
