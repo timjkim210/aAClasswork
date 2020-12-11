@@ -48,7 +48,7 @@ end
 
 class TowersOfHanoi
     attr_reader :towers
-    
+
     def initialize
         @towers = [[1,2,3],[],[]]
     end
@@ -56,10 +56,10 @@ class TowersOfHanoi
     def play
         until won?
             puts 'Which disc would you like to move?'
-            disc = gets.chomp.to_i
+            # disc = gets.chomp.to_i
             if top?(disc)
                 puts 'Where would you like to move it?'
-                pos = gets.chomp.to_i
+                # pos = gets.chomp.to_i
                 move(disc, pos)
             else
                 puts 'Cant move that disc, please choose another disc'

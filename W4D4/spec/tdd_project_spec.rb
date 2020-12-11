@@ -52,10 +52,11 @@ describe TowersOfHanoi do
 
     end
 
-    describe 'play' do
+    describe '#play' do
         hanoi = TowersOfHanoi.new
         it 'checks if won? is being called' do
             expect(hanoi).to receive(:won?)
+            hanoi.play
         end
     end
 
