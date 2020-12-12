@@ -37,3 +37,21 @@ def third_anagram?(string1,string2)
     arr1 == arr2
 end
 
+def fourth_anagram?(string1, string2)
+    char_hash = make_char_hash(string1)
+    string2.each_char do |char|
+        char_hash[char] -= 1
+    end
+    char_hash.values.all? {|value| value == 0}
+end
+
+def make_char_hash(string)
+    char_hash = Hash.new(0)
+    string.each_char do |char|
+        char_hash[char] += 1
+    end
+    char_hash
+end
+
+
+
