@@ -74,6 +74,7 @@ class ResizingIntSet
   end
 
   def remove(num)
+    self[num].delete(num) && @count -= 1 if include?(num)
   end
 
   def include?(num)
@@ -92,5 +93,15 @@ class ResizingIntSet
   end
 
   def resize!
+    if @count >= num_buckets
+      prev_num_buckets = num_buckets
+      more_buckets = prev_num_buckets
+      more_buckets.times {@store << []}
+      prev_eles = @store.compact.flatten
+      prev_eles.each do |ele|
+        self[ele].delete(ele)
+        self[ele] << ele
+      end
+    end
   end
 end
