@@ -7,6 +7,8 @@ class Array
   end
 end
 
+
+
 class String
   def hash
   end

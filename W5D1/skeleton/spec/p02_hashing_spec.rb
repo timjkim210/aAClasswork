@@ -8,7 +8,7 @@ describe "Hashing" do
     end
 
     it "should hash deterministically" do
-      a = [1, 2, 3]
+      a = [1, 2, ]3
       expect(a.hash).to eq(a.hash)
     end
 
