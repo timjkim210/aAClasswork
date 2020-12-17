@@ -4,6 +4,11 @@ end
 
 class Array
   def hash
+    str = ""
+    self.each_with_index do |ele, i| 
+      str += i.hash.to_s + ele.to_s
+    end
+    str.to_i.hash
   end
 end
 
