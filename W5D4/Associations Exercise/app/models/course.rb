@@ -29,5 +29,4 @@ class Course < ApplicationRecord
     foreign_key: :instructor_id,
     primary_key: :id,
     class_name: :User
-
 end
