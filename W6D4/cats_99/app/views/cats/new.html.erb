@@ -1,6 +1,6 @@
 <h1>Cat Application Form</h1>
 
-<form action="">>
+<form action="">
     <label>name: 
         <input 
             type="text" 
@@ -21,6 +21,18 @@
         value="F"
         id="female">
     <label for="female">Female</label>
+
+    <label for="cat_color">Color</label>
+    <select name="cat[color]" id="cat_color">
+    <option disabled selected>--select color--</option>
+    <% Cat::COLORS.each do |color| %>
+        <option value = "<%= color %>">
+        </option>
+
+    <% end %>
+    
+    <label>Birthdate</label>
+    <input type="date" name="cat[birth_date]" value="cat.birth_date">
 
 
     
