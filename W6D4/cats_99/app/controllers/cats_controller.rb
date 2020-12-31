@@ -5,6 +5,9 @@ class CatsController < ApplicationController
     end
 
     def show
+        @cat = Cat.find_by(params[:id])
+        render :show
+    end
         
 
 end
