@@ -8,13 +8,9 @@
         <th> value </th>
     </tr>
     <% [:age, :birth_date, :color, :sex].each do |attr_name| %>
-
         <tr>
-            <td>
+            <td><%= attr_name %></td>
+            <td><%= @cat.send(attr_name) %></td>
         </tr>
-
-
-
-
-
+    <% end %>
 </table>
