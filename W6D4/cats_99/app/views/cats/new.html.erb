@@ -5,7 +5,7 @@
         <input 
             type="text" 
             name="cat[name]" 
-            value="<%= @cat.name %>">
+            value="<%= @cat.name %>"/>
     </label>
 
     
@@ -13,29 +13,35 @@
         type="radio"
         name="cat[sex]"
         value="M"
-        id="male">
+        id="male"/>
     <label for="male">Male</label>
     <input
         type="radio"
         name="cat[sex]"
         value="F"
-        id="female">
+        id="female"/>
     <label for="female">Female</label>
 
     <label for="cat_color">Color</label>
     <select name="cat[color]" id="cat_color">
-    <option disabled selected>--select color--</option>
-    <% Cat::COLORS.each do |color| %>
-        <option value = "<%= color %>">
-        </option>
+        <option disabled selected>--select color--</option>
+        <% Cat::COLORS.each do |color| %>
+            <option value ="<%= color %>">
+                <%= color %>
+            </option>
 
-    <% end %>
+        <% end %>
+    </select>
     
     <label>Birthdate</label>
-    <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>">
+    <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>"/>
 
     <label>Description</label>
-    <textarea name="cat[description]" value="<%= @cat.description %>">
+    <textarea name="cat[description]" value="<%= @cat.description %>"></textarea>
+
+    <input type="submit" value="submit"/>
+
+    </form>
 
 
 
