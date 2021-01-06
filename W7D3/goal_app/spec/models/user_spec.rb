@@ -12,6 +12,7 @@ RSpec.describe User, type: :model do
   subject(:user) {User.new(name: "Bob", email: "bob@email.com", password: "123456")}
 
   describe "#is_password?" do
+    user.save
     it "verify a password" do 
       expect(user.is_password?("123456")).to be true
     end
@@ -38,8 +39,13 @@ RSpec.describe User, type: :model do
   end
 
   describe "::find_by_credentials" do
+    user.save
     it "checks for a user" do
-      
+      User.find_by_credentials("bob@email.com", "123456").to eq user 
+    end
+
+    it "returns nil for non-existing user" do
+      User.find_by_credentials("bob-wannabe@email.com", "123456789").to eq nil
     end
   end
 
@@ -53,6 +59,14 @@ RSpec.describe User, type: :model do
       it "ensures a session token" do
         expect(user.session_token).not_to eq nil
       end
+    end
+  end
+
+  describe "#reset_session_token!" do
+    past_token = user.session_token
+    user.reset_session_token!
+    it "generates new session token" do
+      expect(user.session_token).not_to eq past_token
     end
   end
 
