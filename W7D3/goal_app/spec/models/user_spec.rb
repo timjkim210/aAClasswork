@@ -21,6 +21,28 @@ RSpec.describe User, type: :model do
     end
   end
 
+  # begin
+    
+  # rescue => exception
+    
+  # end, maybe use this for password=?
+
+  describe "#password=" do
+    it "creates a password_digest" do
+      expect(user.password_digest).not_to eq nil
+    end
+
+    it "does not save password to the database" do
+      expect(user.password).to eq nil
+    end
+  end
+
+  describe "::find_by_credentials" do
+    it "checks for a user" do
+      
+    end
+  end
+
   describe "::generate_session_token" do
     it "generate session token" do
       expect(User.generate_session_token).not_to eq nil 
@@ -33,8 +55,6 @@ RSpec.describe User, type: :model do
       end
     end
   end
-
-  
 
 
 end
