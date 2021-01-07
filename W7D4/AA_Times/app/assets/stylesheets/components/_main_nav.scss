@@ -1,18 +1,22 @@
 .main-nav {
   display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  align-items: center;
 }
 
 .left-nav {
 
   > ul {
     > li {
-
+      // font-family: ;
+      // font-size: ;
+      text-transform: uppercase;
     }
   }
 
@@ -22,15 +26,15 @@
 }
 
 .right-nav  {
-
-  > ul {
-
-    > li {
   
+  > ul {
+    
+    > li button {
+      text-transform: uppercase;
     }
 
     > li:last-of-type {
-  
+      
     }
   }
   
