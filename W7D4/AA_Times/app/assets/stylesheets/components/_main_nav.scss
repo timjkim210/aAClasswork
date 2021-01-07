@@ -1,5 +1,6 @@
 .main-nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
@@ -21,7 +22,7 @@
   }
 
   span {
-
+    margin: 10px;
   }
 }
 
@@ -31,6 +32,10 @@
     
     > li button {
       text-transform: uppercase;
+      
+    } 
+    > li {
+      margin: 3px;
     }
 
     > li:last-of-type {
@@ -39,11 +44,11 @@
   }
   
   i {
-
+    font-size: large;
   }
 }
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  background-color: lightgray;
 }
