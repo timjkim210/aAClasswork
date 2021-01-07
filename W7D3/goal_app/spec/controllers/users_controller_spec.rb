@@ -25,6 +25,15 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to be_success
         expect(response).to render_template(:show)
       end
+
+      it "does not show non-existent users" do
+        begin
+            get :show, id: -1
+        rescue
+            ActiveRecord::RecordNotFound
+        end
+        expect(response).not_to render_template(:show)
+      end
     end
 
     describe "GET #edit" do
@@ -37,13 +46,21 @@ RSpec.describe UsersController, type: :controller do
 
     describe "POST #create" do
       context "with invalid params" do
-        it "renders the new template" do
+        it "fails with short password" do
+            post :create, params: { user: { name: "billy", email: "billy@email.com", password: ""} }
+            expect(response).to render_template(:new)
+        end
 
+        it "fail with present parameters" do
+            post :create, params: { user: { password: "123456"} }
+            expect(response).to render_template(:new)
         end
       end
 
       context "with valid params" do
 
+        post :create, params: { user: { name: "sam", email: "sam@email.com", password: "123456"} }
+        expect(response).to render_template(user_url)
       end
     end
 
