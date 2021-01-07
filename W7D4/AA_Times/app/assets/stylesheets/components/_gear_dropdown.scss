@@ -7,13 +7,29 @@
     position: absolute;
     // top: 50px;
     display: none;
-    border: solid white
+    border: 1px solid $light-gray;
+    background-color: white;
+    top: 25px;
+    right: 3px;
+    width: 250px;
+    z-index: 1;
+
+    .editions a {
+        color: $gray;
+        text-decoration: none;
+    }
 }
+
+
+
 
 #gear-icon:hover .gear-dropdown {
     display: block;
 }
 
 .gear-dropdown li {
-    padding: 5px;
+    padding: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
