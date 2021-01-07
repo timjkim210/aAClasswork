@@ -1,0 +1,14 @@
+.section {
+    display: flex;
+    justify-content: center;
+
+    li {
+        list-style: none;
+        margin: 5px;
+    }
+
+    li:hover {
+        background-color: grey;
+        
+    }
+}
