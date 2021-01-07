@@ -12,7 +12,6 @@ RSpec.describe User, type: :model do
   subject(:user) {User.new(name: "Bob", email: "bob@email.com", password: "123456")}
 
   describe "#is_password?" do
-    user.save
     it "verify a password" do 
       expect(user.is_password?("123456")).to be true
     end
@@ -67,6 +66,10 @@ RSpec.describe User, type: :model do
     user.reset_session_token!
     it "generates new session token" do
       expect(user.session_token).not_to eq past_token
+    end
+
+    it "returns the new session token" do
+      expect(user.session_token.class).to eq past_token.class
     end
   end
 
