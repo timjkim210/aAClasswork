@@ -16,6 +16,8 @@
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 
+	
+
 	a {
 		margin: 0 5px;
 		text-transform: uppercase;
@@ -26,6 +28,10 @@
 
 	ul {
 		display: flex;
+	}
+
+	li:first-child {
+		font-weight: bold;
 	}
 }
 
