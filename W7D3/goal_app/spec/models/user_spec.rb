@@ -38,12 +38,13 @@ RSpec.describe User, type: :model do
   end
 
   describe "::find_by_credentials" do
-    user.save
     it "checks for a user" do
+      user.save
       User.find_by_credentials("bob@email.com", "123456").to eq user 
     end
 
     it "returns nil for non-existing user" do
+      user.save
       User.find_by_credentials("bob-wannabe@email.com", "123456789").to eq nil
     end
   end
@@ -54,22 +55,22 @@ RSpec.describe User, type: :model do
     end
   
     describe "#ensure_session_token" do
-      user.session_token ||= User.generate_session_token
       it "ensures a session token" do
+        user.session_token ||= User.generate_session_token
         expect(user.session_token).not_to eq nil
       end
     end
   end
 
   describe "#reset_session_token!" do
-    past_token = user.session_token
-    user.reset_session_token!
     it "generates new session token" do
+      past_token = user.session_token
+      user.reset_session_token!
       expect(user.session_token).not_to eq past_token
     end
 
     it "returns the new session token" do
-      expect(user.session_token.class).to eq past_token.class
+      expect(user.reset_session_token!.class).to eq past_token.class
     end
   end
 
