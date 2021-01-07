@@ -49,6 +49,7 @@
 
 	li {
 		margin-left: 10px;
+		list-style: none;
 	}
 
 	button {
@@ -67,6 +68,7 @@
 	button, 
 	time {
 		margin-right: 10px;
+		color: black;
 	}
 
 	i {
@@ -76,4 +78,8 @@
 	strong {
 		color: green;
 	}
+}
+
+#degree:hover, #stock:hover {
+	background-color: lightgray;
 }
