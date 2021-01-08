@@ -7,7 +7,16 @@
     background-color: white;
     box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
     width: 175px;
+
+    li {
+        padding: 10px;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+    }
 }
+
+
 
 #section-sidebar-btn {
     position: relative;
@@ -32,6 +41,20 @@
     border: 1px solid $light-gray;
     background-color: white;
     box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
+    width: 200px;
+
+    li {
+        padding: 10px;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+        margin-left: 10px;
+    }
+
+    .dropdown-sub {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 .dropdown:hover > ul {
