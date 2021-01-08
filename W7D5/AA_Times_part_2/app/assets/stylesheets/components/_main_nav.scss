@@ -53,3 +53,18 @@
 .right-nav > ul > li:last-of-type:hover {
   background-color: lightgray;
 }
+
+@media all and (max-width: 1000px) {
+  .right-nav li button{
+    width: 100%;
+    display: none;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .left-nav span{
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+  }
+}

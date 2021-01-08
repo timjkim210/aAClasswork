@@ -13,3 +13,10 @@
         
     }
 }
+
+@media all and (max-width: 1000px) {
+    .section {
+        width: 100%;
+        display: none;
+    }
+}

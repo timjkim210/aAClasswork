@@ -83,3 +83,10 @@
 #degree:hover, #stock:hover {
 	background-color: lightgray;
 }
+
+@media all and (max-width: 1000px) {
+  .language-nav{
+    width: 100%;
+    display: none;
+  }
+}
