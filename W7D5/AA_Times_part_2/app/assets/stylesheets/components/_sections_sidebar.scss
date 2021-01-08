@@ -42,6 +42,7 @@
     background-color: white;
     box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
     width: 200px;
+    top: -25px;
 
     li {
         padding: 10px;
@@ -51,12 +52,23 @@
         margin-left: 10px;
     }
 
+    li:hover:not(.dropdown-sub) {
+        background-color: $lightest-blue;
+    }
+
     .dropdown-sub {
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        color: $gray;
+        font-size: 10px;
+        text-transform: uppercase;
     }
 }
 
 .dropdown:hover > ul {
     display: block;
+}
+
+.dropdown:hover {
+    background-color: $lightest-blue;
 }
