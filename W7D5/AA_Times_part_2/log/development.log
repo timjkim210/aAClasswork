@@ -3527,3 +3527,24 @@ Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-01-07 16:47:36 -0800
+Started GET "/" for ::1 at 2021-01-08 09:39:24 -0800
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/tim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:113)
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_gear_dropdown.html.erb (2.4ms)
+  Rendered shared/_main_nav.html.erb (12.2ms)
+  Rendered shared/_masthead.html.erb (0.6ms)
+  Rendered shared/_sections_nav.html.erb (19.9ms)
+  Rendered shared/_search_modal.html.erb (6.9ms)
+  Rendered shared/_main_content.html.erb (0.9ms)
+  Rendered static_pages/index.html.erb within layouts/application (182.7ms)
+Completed 200 OK in 1802ms (Views: 1697.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2021-01-08 09:39:26 -0800
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-01-08 09:39:27 -0800
+Started GET "/assets/new_office.jpg" for ::1 at 2021-01-08 09:39:27 -0800
+Started GET "/assets/application.self-ef1d5ccc0022a489b2d7a6c0f6310b4fb3e75c310669ca20497781d4d6cf0926.css?body=1&livereload=1610128419415" for ::1 at 2021-01-08 09:53:39 -0800
+Started GET "/assets/application.self-ef1d5ccc0022a489b2d7a6c0f6310b4fb3e75c310669ca20497781d4d6cf0926.css?body=1&livereload=1610128419436" for ::1 at 2021-01-08 09:53:39 -0800
+Started GET "/assets/application.self-ef1d5ccc0022a489b2d7a6c0f6310b4fb3e75c310669ca20497781d4d6cf0926.css?body=1&livereload=1610128454758" for ::1 at 2021-01-08 09:54:14 -0800
+Started GET "/assets/application.self-ef1d5ccc0022a489b2d7a6c0f6310b4fb3e75c310669ca20497781d4d6cf0926.css?body=1&livereload=1610128454761" for ::1 at 2021-01-08 09:54:14 -0800
