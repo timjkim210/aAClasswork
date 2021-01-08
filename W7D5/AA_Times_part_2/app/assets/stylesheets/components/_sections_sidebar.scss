@@ -1,10 +1,15 @@
-.section-sidebar {
+#sections-sidebar {
     opacity: 0;
 
 }
 
-.expand {
+#section-sidebar-btn {
+    position: relative;
+}
+
+#sections-sidebar-btn .expand {
     opacity: 1;
+    position: absolute;
 }
 
 .dropdown {
