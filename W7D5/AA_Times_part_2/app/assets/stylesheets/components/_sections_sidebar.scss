@@ -1,6 +1,12 @@
 #sections-sidebar {
     opacity: 0;
-
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    border: 1px solid $light-gray;
+    background-color: white;
+    box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
+    width: 175px;
 }
 
 #section-sidebar-btn {
@@ -9,7 +15,9 @@
 
 #sections-sidebar-btn .expand {
     opacity: 1;
-    position: absolute;
+    // position: absolute;
+    // z-index: 1;
+    // left: 20px;
 }
 
 .dropdown {
@@ -19,6 +27,11 @@
 .dropdown > ul {
     display: none;
     position: absolute;
+    left: 150px;
+    z-index: 2;
+    border: 1px solid $light-gray;
+    background-color: white;
+    box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
 }
 
 .dropdown:hover > ul {
