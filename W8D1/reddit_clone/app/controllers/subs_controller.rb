@@ -32,9 +32,9 @@ class SubsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @sub = Sub.new(params.require(:sub).permit(:title, :description))
-    if @user && @sub.save
+    @sub.mod_id = current_user.id
+    if @sub.save
       redirect_to sub_url(@sub)
     else
       flash.now[:errors] = @sub.errors.full_messages
