@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :require_logged_in, only: [:show] #probably shouldn't allow random users to see all the users (index) but leaving for testing purposes
+    before_action :require_logged_in, only: [:show, :update] #probably shouldn't allow random users to see all the users (index) but leaving for testing purposes
 
     def new
         @user = User.new
@@ -29,13 +29,14 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find(params[:id])
+        #@user = User.find(params[:id])
+        @user = current_user
         render :edit
     end
 
     def update
-        @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
-
+        #@user = User.find_by_credentials(params[:user][:username], params[:user][:password]) #finds a user (with find_by_credentials username password), logs them in
+        @user = current_user            #must be restricted to only_logged_in with before_action require_logged_in
         if @user.update(user_params)
             redirect_to user_url(@user)
         else
@@ -43,7 +44,6 @@ class UsersController < ApplicationController
             render :edit
         end
     end
-
 
     private
     def user_params
