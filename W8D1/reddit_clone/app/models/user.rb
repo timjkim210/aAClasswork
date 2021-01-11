@@ -7,10 +7,9 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many: :subs,
+    has_many :subs,
         foreign_key: :mod_id,
-        class_name: :Sub 
-
+        class_name: :Sub
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
