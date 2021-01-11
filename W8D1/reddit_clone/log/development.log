@@ -194,3 +194,220 @@ Migrating to CreatePosts (20210111200314)
   ↳ /Users/tim/.rbenv/versions/2.5.1/bin/annotate:23
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/tim/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2021-01-11 14:31:50 -0800
+Started GET "/" for ::1 at 2021-01-11 14:31:50 -0800
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (88.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+Started POST "/__better_errors/6057a3451b84123b/variables" for ::1 at 2021-01-11 14:31:50 -0800
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:31:57 -0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development:
+
+Started POST "/__better_errors/870c288a697b61e2/variables" for ::1 at 2021-01-11 14:31:59 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20210111200314)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (29.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying NOT NULL, "url" character varying NOT NULL, "content" text NOT NULL, "sub_id" integer NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210111200314_create_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210111200314"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/new" for ::1 at 2021-01-11 14:32:30 -0800
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 5597ms (Views: 5324.5ms | ActiveRecord: 63.8ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:36:18 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 115ms (Views: 112.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:15 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 138ms (Views: 136.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:21 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 132ms (Views: 127.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:23 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 150ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-01-11 14:37:30 -0800
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template sessions/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/tim/Desktop/aAClasswork/W8D1/reddit_clone/app/views":
+  app/controllers/sessions_controller.rb:5:in `new'
+
+Started POST "/__better_errors/d36253552636aeb4/variables" for ::1 at 2021-01-11 14:37:30 -0800
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:35 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 163ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:39 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 128ms (Views: 126.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:57 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 137ms (Views: 135.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:58 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 137ms (Views: 136.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:37:59 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 124ms (Views: 122.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:38:53 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 166ms (Views: 164.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-01-11 14:44:07 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 230ms (Views: 229.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-01-11 14:47:20 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"alex", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/7d2cd5b44ff5f8f0/variables" for ::1 at 2021-01-11 14:47:21 -0800
+Started GET "/users" for ::1 at 2021-01-11 14:48:15 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (91.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (94.9ms)
+Completed 200 OK in 322ms (Views: 228.5ms | ActiveRecord: 91.1ms)
+
+
+Started POST "/users" for ::1 at 2021-01-11 14:48:25 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"alex", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/a195d8bea9d98b4d/variables" for ::1 at 2021-01-11 14:48:25 -0800
+Started GET "/users/new" for ::1 at 2021-01-11 14:48:29 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 167ms (Views: 166.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-01-11 14:48:34 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"j5oi288Vlkf3rzWxMMYAeZtZyBsUzq7EbwLmh1ZaaSIm00nGcZYA3y/lXpg+BRNWIz6KEBYpzptqsqAYNihQvw==", "user"=>{"username"=>"alex", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (7.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "alex"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wbQvrfWHyYWFVIOgqhpIA6rFKHg9uw+EYTqTtDodA/O/lZj+B5M7fO6G4qaGNpzTpgRsGqMBao9zs9nLbUJpDg=="], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "alex"], ["password_digest", "$2a$12$4pBdE/MVyv4LBwno74O0R.E1hoDuPcbq7fCo/dE/tk4P9XxJxd.JW"], ["session_token", "wbQvrfWHyYWFVIOgqhpIA6rFKHg9uw+EYTqTtDodA/O/lZj+B5M7fO6G4qaGNpzTpgRsGqMBao9zs9nLbUJpDg=="], ["created_at", "2021-01-11 22:48:34.958147"], ["updated_at", "2021-01-11 22:48:34.958147"]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "alex"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Exists (31.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "XXQPL9TVQHTVMXgMKf817VRFhtZALM7Bvp+NLfowEb6Lj/SwcSEeVOEtWU7dKnlgp6lbYEx8zn60EU2YgC2yEg=="], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  [1m[36mUser Update (10.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "XXQPL9TVQHTVMXgMKf817VRFhtZALM7Bvp+NLfowEb6Lj/SwcSEeVOEtWU7dKnlgp6lbYEx8zn60EU2YgC2yEg=="], ["updated_at", "2021-01-11 22:48:35.000730"], ["id", 1]]
+  ↳ app/models/user.rb:47
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:47
+Redirected to http://localhost:3000/users
+Completed 302 Found in 746ms (ActiveRecord: 58.7ms)
+
+
+Started GET "/users" for ::1 at 2021-01-11 14:48:35 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 398ms (Views: 379.9ms | ActiveRecord: 17.1ms)
+
+
