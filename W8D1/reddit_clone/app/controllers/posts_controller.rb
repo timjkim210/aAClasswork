@@ -3,17 +3,19 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        @subs = Sub.all
         render :show
     end
 
     def new
         @post = Post.new
+        @subs = Sub.all
         render :new
     end
 
     def create
+        #debugger
         @post = Post.new(post_params)
+        @subs = Sub.all
         @post.author_id = current_user.id
         if @post.save
             redirect_to post_url(@post)
