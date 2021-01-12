@@ -18,7 +18,7 @@ class SubsController < ApplicationController
 
   def show
     @sub = Sub.find(params[:id])
-    redirect_to sub_url(@sub)
+    render :show
   end
 
   def index
