@@ -15,9 +15,10 @@
     </textarea>
 
     <label for="">Choose a Sub</label>
-    <select name="post[sub_id]" value="<%= post.sub_id %>">
+    
+    <select>
         <% @subs.each do |sub| %>
-            <%= sub.title %>
+            <option name="post[sub_id]" value="4"><%= sub.title %></option>            
         <% end %>
     </select>
 
