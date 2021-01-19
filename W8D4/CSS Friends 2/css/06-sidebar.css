@@ -1,0 +1,52 @@
+/* PHASE 0: Sidebar */
+
+.profile-picture {
+    display: block;
+    margin-top: -150px;
+    z-index: 1;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px;
+
+    
+}
+
+.online {
+        position: absolute;
+        margin-top: -220px;
+        transform: rotate(-40deg) translateX(-60px);
+
+        
+    }
+
+.online-text {
+    position: absolute;
+    margin-top: -145px;
+    transform: rotate(-40deg) translateX(36px);
+    z-index: 1;
+    text-transform: bold;
+
+}
+
+.profile-info {
+    margin-top: 40px;
+}
+
+.profile-info h2 {
+    font-size: 30px;
+    text-transform: bold;
+    margin-bottom: 10px;
+}
+
+
+.profile-nav {
+    margin-top: 20px;
+    text-emphasis: bold;
+    font-size: 20px;
+    border-top: 5px;
+}
+
+.profile-nav li {
+    margin-top: 5px;
+    border-top: 2px solid lightgray;
+    padding-top: 5px;
+}
