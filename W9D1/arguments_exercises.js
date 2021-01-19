@@ -6,13 +6,15 @@
 //     return sum;
 // }
 
-function add(...args) {
-    return args.reduce((acc, el) => {
-        return acc + el;
-    })
-}
+// function add(...args) {
+//     return args.reduce((acc, el) => {
+//         return acc + el;
+//     })
+// }
 
-console.log(add(1, 2, 3, 4, 5))
+// console.log(add(1, 2, 3, 4, 5))
+
+const myBind = {}
 
 
 
