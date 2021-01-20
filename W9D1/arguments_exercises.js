@@ -81,19 +81,40 @@ const myBind = {}
 
   function curriedSum(numArgs) {
       let numbers = [];
-      function _curriedSum(number) {
+      return function _curriedSum(number) {
         numbers.push(number);
         if (numbers.length === numArgs) {
             let sum = 0;
             for (let i = 0; i < numbers.length; i++) {
                 sum += numbers[i];
             }
-            return sum
+            return sum;
         } else {
-            return numbers
+            return _curriedSum;
         }
     }
-    return _curriedSum;
+    // return _curriedSum;
   }
 
-  curriedSum(3)(1)(2)(3);
+  console.log(curriedSum(3)(1)(2)(3));
+
+  Function.prototype.curry(numArgs) {
+    let numbers = [];
+    function pushNum(number) {
+        numbers.push(number);
+      }
+      if (numbers.length < numArgs) {
+          return Function.prototype.curry()
+      } else if (numbers.length === numArgs) {
+            this.apply(numbers)
+      }
+    
+  }
+
+  Function.prototype.printHelloWorld() {
+      console.log('Hello World')
+  } 
+
+  console.log()
+
+  
