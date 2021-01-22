@@ -2,6 +2,7 @@ import {htmlGenerator} from "./warmup"
 
 class Clock {
     constructor() {
+        console.log('clock')
         const time = new Date();
         this.hours = time.getHours();
         this.minutes = time.getMinutes();

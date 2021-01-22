@@ -2,9 +2,12 @@
 const partyHeader = document.getElementById('party');
 
 export const htmlGenerator = (string, htmlElement) => {
-
+    if (htmlElement.children) {
+        let kids = Array.from(htmlElement.children)
+        kids.forEach((kid) => htmlElement.removeAttribute(kid));
+    }
     const p = document.createElement("p") 
-    p.innerText = string
+    p.innerHTML = string
     htmlElement.append(p)
 
 };
