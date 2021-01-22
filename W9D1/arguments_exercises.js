@@ -79,42 +79,47 @@ const myBind = {}
 //   // Pavlov says meow to me!
 //   // true 
 
-  function curriedSum(numArgs) {
-      let numbers = [];
-      return function _curriedSum(number) {
-        numbers.push(number);
-        if (numbers.length === numArgs) {
-            let sum = 0;
-            for (let i = 0; i < numbers.length; i++) {
-                sum += numbers[i];
-            }
-            return sum;
-        } else {
-            return _curriedSum;
-        }
-    }
-    // return _curriedSum;
-  }
+//   function curriedSum(numArgs) {
+//       let numbers = [];
+//       return function _curriedSum(number) {
+//         numbers.push(number);
+//         if (numbers.length === numArgs) {
+//             let sum = 0;
+//             for (let i = 0; i < numbers.length; i++) {
+//                 sum += numbers[i];
+//             }
+//             return sum;
+//         } else {
+//             return _curriedSum;
+//         }
+//     }
+//     // return _curriedSum;
+//   }
 
-  console.log(curriedSum(3)(1)(2)(3));
+//   console.log(curriedSum(3)(1)(2)(3));
 
-  Function.prototype.curry(numArgs) {
+// function pushNum(number) {
+//     numbers.push(number);
+//   }
+  Function.prototype.curry = function(numArgs) {
     let numbers = [];
-    function pushNum(number) {
-        numbers.push(number);
+    let that = this;
+      return function _curry(number) {
+        if (numbers.length < numArgs) {
+            numbers.push(number);
+            return Function.prototype.curry()
+        } else if (numbers.length === numArgs) {
+              that.apply(numbers)
+        }
       }
-      if (numbers.length < numArgs) {
-          return Function.prototype.curry()
-      } else if (numbers.length === numArgs) {
-            this.apply(numbers)
-      }
-    
+  };
+
+  function printArray(arr) {
+      console.log(arr)
   }
 
-  Function.prototype.printHelloWorld() {
-      console.log('Hello World')
-  } 
+  printArray.curry(3)(1)(2)(3);
 
-  console.log()
+  
 
   
