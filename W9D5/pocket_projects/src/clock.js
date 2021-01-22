@@ -6,17 +6,22 @@ class Clock {
         this.hours = time.getHours();
         this.minutes = time.getMinutes();
         this.seconds = time.getSeconds();
+        htmlGenerator(this.printTime(), document.getElementById('clock'));
+        setInterval(this._tick.bind(this), 1000);
     }
-    htmlGenerator(this.printTime(), document.getElementById('clock'))
+    
+
+
     printTime() {
         const timeJoin = [this.hours, this.minutes, this.seconds].join(":");
+        
         return timeJoin;
     }
 
 
     _tick() {
         this._incrementSeconds();
-        htmlGenerator()
+        htmlGenerator(clock.printTime(), document.getElementById('clock'));
     }
 
     _incrementSeconds() {
