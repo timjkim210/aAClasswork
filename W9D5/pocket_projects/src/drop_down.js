@@ -37,10 +37,15 @@ const attachDogLinks = function() {
 
 attachDogLinks();
 
+const showDropDown = (e) => {
+  let ele = e.target
+  ele.classList.toggle()
+}
+
 function handleEnter() {
   const dogDropDown = document.querySelector(".drop-down-dog-nav")
 
-  dogDropDown.addEventListener("mouseenter", )
+  dogDropDown.addEventListener("mouseenter", showDropDown)
 
 }
 
