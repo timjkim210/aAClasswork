@@ -53,5 +53,10 @@ h1 {
 }
 
 .dog-link {
+
   display: none; 
+}
+
+.dog-link.open {
+  display: block;
 }

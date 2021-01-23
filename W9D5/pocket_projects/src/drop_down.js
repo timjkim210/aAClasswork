@@ -42,10 +42,25 @@ const showDropDown = (e) => {
   ele.classList.toggle()
 }
 
+// dogDropDown.addEventListener("mouseenter", showDropDown)
+
 function handleEnter() {
-  const dogDropDown = document.querySelector(".drop-down-dog-nav")
-
-  dogDropDown.addEventListener("mouseenter", showDropDown)
-
+  const dogDropDown = document.querySelectorAll(".dog-link");
+  dogDropDown.forEach((dog) => {
+    dog.classList.add("open");
+  })
 }
+
+function handleLeave() {
+  const dogDropDown = document.querySelectorAll(".dog-link");
+  dogDropDown.forEach((dog) => {
+    dog.classList.remove("open");
+  })
+}
+
+const dropDown = document.querySelector(".drop-down-dog-nav")
+
+dropDown.addEventListener("mouseenter", handleEnter);
+dropDown.addEventListener("mouseleave", handleLeave);
+
 
