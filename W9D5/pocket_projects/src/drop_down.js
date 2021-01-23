@@ -9,19 +9,32 @@ const dogs = {
   "French Bulldog": "https://www.akc.org/dog-breeds/french-bulldog/" 
 };
 
-function dogLinkCreator() = {
+function dogLinkCreator() {
+  const dogLinks = [];
 
-  let dogNames = dogs.keys();
-  let dogLinks = dogs.values();
+  let dogNames = Object.keys(dogs);
+  // let dogLinks = dogs.values();
 
   dogNames.forEach(dog){
     const a = document.createElement('a');
     a.innerHTML = dog;
-    a.setAttribute("href", dogs[dog])
+    a.href = dogs[dog];
 
     const li = document.createElement("li")
-    li.setAttribute("class", "dog-link")
+    li.classList = "dog-link"
+    li.append(a);
+    dogLinks.push(li);
   }
+  console.log(dogLinks);
+  return dogLinks;
 
 }
+
+const attachDogLinks = function() {
+  const dogLinks2 = dogLinkCreator();
+  const list = document.querySelector(".drop-down-dog-list");
+  dogLinks2.forEach(el => list.appendChild(el))
+}
+
+attachDogLinks();
 
