@@ -37,13 +37,13 @@ class DOMNodeCollection {
 
     addClass(name) {
         this.elements.forEach(el => {
-            el.setAttributeNode(name);
+            el.classList.add(name);
         });
     }
 
     removeClass(name) {
         this.elements.forEach(el => {
-            el.removeAttribute(name);
+            el.classList.remove(name);
         })
     }
 }
