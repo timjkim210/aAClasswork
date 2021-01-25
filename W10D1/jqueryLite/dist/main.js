@@ -10,6 +10,6 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("window.$1 = function(arg) {};\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("window.$1 = function(arg) {\n    let nodes = document.querySelectorAll(arg);\n    console.log(nodes);\n    let nodesArr = Array.from(nodes);\n    return nodesArr;\n};\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 /******/ })()
 ;
