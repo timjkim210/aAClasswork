@@ -16,5 +16,9 @@ class DOMNodeCollection {
             el.innerHTML = "";
         });
     }
+
+    append() {
+        
+    }
 }
 module.exports = DOMNodeCollection
