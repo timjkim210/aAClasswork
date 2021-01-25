@@ -10,6 +10,6 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("window.$1 = function(arg) {\n    let nodes = document.querySelectorAll(arg);\n    console.log(nodes);\n    let nodesArr = Array.from(nodes);\n    return nodesArr;\n};\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (3:8)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| const DOMNodeCollection = require(\\\"./dom_node_collection\\\");\\n| \\n> require \\\"./dom_node_collection.js\\\"\\n| \\n| window.$1 = function(arg) {\");\n\n//# sourceURL=webpack:///./src/index.js?");
 /******/ })()
 ;

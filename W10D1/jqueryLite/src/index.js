@@ -1,7 +1,16 @@
+const DOMNodeCollection = require("./dom_node_collection");
+
+require "./dom_node_collection.js"
+
 window.$1 = function(arg) {
-    let nodes = document.querySelectorAll(arg);
-    console.log(nodes);
-    let nodesArr = Array.from(nodes);
-    return nodesArr;
+    if (arg instanceof HTMLElement) {
+        const nodes = new DOMNodeCollection([arg])
+        return nodes;
+    } else {
+        let nodes = document.querySelectorAll(arg);
+        console.log(nodes);
+        let nodesArr = Array.from(nodes);
+        return nodesArr;
+    }
 };
 
