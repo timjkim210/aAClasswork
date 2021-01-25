@@ -37,7 +37,7 @@ class DOMNodeCollection {
 
     addClass(name) {
         this.elements.forEach(el => {
-            el.className = name;
+            el.setAttributeNode(name);
         });
     }
 
