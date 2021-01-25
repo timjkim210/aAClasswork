@@ -1,7 +1,5 @@
 const DOMNodeCollection = require("./dom_node_collection");
 
-require "./dom_node_collection.js"
-
 window.$1 = function(arg) {
     if (arg instanceof HTMLElement) {
         const nodes = new DOMNodeCollection([arg])
