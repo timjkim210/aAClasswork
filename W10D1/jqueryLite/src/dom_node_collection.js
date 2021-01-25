@@ -47,10 +47,12 @@ class DOMNodeCollection {
         })
     }
 
-    attr(arg) {
-        this.elements.forEach(el => {
-            el.getAttribute(arg);
-        })
+    attr(arg, value) {
+        if (!value.length) {
+            return this.elements[0].getAttribute(arg);
+        } else {
+            
+        }
     }
 }
 
