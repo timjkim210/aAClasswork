@@ -46,6 +46,12 @@ class DOMNodeCollection {
             el.classList.remove(name);
         })
     }
+
+    attr(arg) {
+        this.elements.forEach(el => {
+            el.getAttribute(arg);
+        })
+    }
 }
 
 module.exports = DOMNodeCollection
