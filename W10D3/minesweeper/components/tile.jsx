@@ -4,8 +4,18 @@ import * as Minesweeper from '../minesweeper'
 
 class Tile extends React.Component {
         render() {
+            let tileText = "";
+            if(this.explored){
+
+            }
+            if(this.flagged){
+
+            }
+            if(this.bombed){
+                
+            }
             return(
-                <div>T</div>
+                <div className='tile'>T</div>
             )
         }
 }
