@@ -18,8 +18,11 @@ class Game extends React.Component {
     };
 
     render() {
+        console.log(this.state.board)
+
         return(
-            <Board board={this.state.board} callback={this.updateGame}/>
+            // console.log(this.state.board)
+            <Board board={this.state.board} updateGame={this.updateGame}/>
         )
     };
 }
