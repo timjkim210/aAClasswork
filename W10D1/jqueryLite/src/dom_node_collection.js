@@ -47,13 +47,25 @@ class DOMNodeCollection {
         })
     }
 
-    attr(arg, value) {
-        if (!value.length) {
-            return this.elements[0].getAttribute(arg);
+    attr(attrName, value) {
+        if (!value) {
+            return this.elements[0].getAttribute(attrName);
         } else {
-            
+            this.elements.forEach(el => {
+                el.setAttribute(attrName, value);
+            })
         }
     }
+
+    children() {
+        const childrenArr = [];
+        this.elements.forEach(el => {
+            childrenArr.push(el.children);
+        })
+        return new DOMNodeCollection(childrenArr);
+    }
+
+    
 }
 
 module.exports = DOMNodeCollection
