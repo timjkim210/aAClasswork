@@ -1,0 +1,7 @@
+.tile{
+    border-style: outset;
+}
+
+.revealed{
+    border-style: inset;
+}
