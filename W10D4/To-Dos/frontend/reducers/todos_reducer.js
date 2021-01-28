@@ -14,8 +14,16 @@
 // };
 import {RECEIVE_TODOS, RECEIVE_TODO} from '../actions/todo_actions'
 
-const todosReducer = (oldState = {}, action) => {
+const todosReducer = (prevState = {}, action) => {
+    const nextState = Object.assign({}, prevState);
+
     switch(action.type) {
+        case RECEIVE_TODOS:
+            action.todos.forEach(todo => {
+                nextState[todo.id] = todo;
+            })
+            // nextState[action.todos.id] = actions.todos;
+            return nextState;
         default:
             return oldState;
     }
