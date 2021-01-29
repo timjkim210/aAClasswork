@@ -4,6 +4,7 @@ import configureStore from './store/store'
 import Root from './components/root'
 import {receiveTodo, receiveTodos, removeTodo} from './actions/todo_actions'
 import {receiveSteps, receiveStep, removeStep} from './actions/step_actions'
+import {allTodos} from './reducers/selectors'
 
 document.addEventListener("DOMContentLoaded", function() {
     const store = configureStore()
@@ -16,4 +17,5 @@ document.addEventListener("DOMContentLoaded", function() {
     window.receiveSteps = receiveSteps;
     window.receiveStep = receiveStep;
     window.removeStep = removeStep;
+    window.allTodos = allTodos;
 })
