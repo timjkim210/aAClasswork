@@ -18,16 +18,18 @@ class Api::TodosController < ApplicationController
 
     def update
         todo = Todo.find_by_id(params[:id])
-        if todo.update(todo_params)
+        if todo && todo.update(todo_params)
             render json: todo
         else
-            render json: "Invalid Params"
+            render json: "Todo was not found"
         end
     end
 
     def destroy
         todo = Todo.find_by_id(params[:id])
-        todo.delete
+        if todo
+            todo.delete
+        end
         render json: todo
     end
 
