@@ -24,8 +24,9 @@ class TodoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.receiveTodo(this.state)
-        this.setState({id: this.uniqueId(), title: "", body: ""})
+        this.props.createTodo(this.state).then(() => {
+            this.setState({id: this.uniqueId(), title: "", body: ""})
+        })
     }
 
     uniqueId() {
