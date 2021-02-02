@@ -43,6 +43,9 @@ class TodoForm extends React.Component {
                     <input type="text" onChange={this.updateBody} value={this.state.body} />
                 </label>
                 <input type="submit" value="Add Todo"/>
+                {this.props.error.map(error => {
+                    return <h3>{error}</h3>
+                })}
             </form>
         )
     }

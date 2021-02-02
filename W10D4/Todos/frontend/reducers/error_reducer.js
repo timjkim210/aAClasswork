@@ -4,7 +4,12 @@ const errorReducer = (prevState={}, action) => {
     const nextState = Object.assign({}, prevState)
     switch(action.type) {
         case RECEIVE_ERRORS:
-            return action.errors
-        case 
+            return action.errors;
+        case CLEAR_ERRORS:
+            return [];
+        default:
+            return prevState;
     }
 }
+
+export default errorReducer;

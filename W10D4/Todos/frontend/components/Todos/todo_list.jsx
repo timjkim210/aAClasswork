@@ -20,7 +20,7 @@ class TodoList extends React.Component {
                         return <TodoListItem receiveTodo={this.props.receiveTodo} removeTodo={this.props.removeTodo} key={todo.id} todo={todo}/>   
                     })}
                 </ul>
-                <TodoForm receiveTodo={this.props.receiveTodo} createTodo={this.props.createTodo}/>
+                <TodoForm receiveTodo={this.props.receiveTodo} createTodo={this.props.createTodo} error={this.props.error}/>
             </>
         )
     }

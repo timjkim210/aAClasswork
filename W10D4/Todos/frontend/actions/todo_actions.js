@@ -31,7 +31,10 @@ export const fetchTodos = () => ({dispatch}) => (
 
 export const createTodo = (todo) => ({dispatch}) => (
     APIUtil.createTodo(todo)
-        .then(res => dispatch(receiveTodo(res)))
+        .then(
+                res => dispatch(receiveTodo(res)),
+                err => dispatch(receiveErrors(err.responseJSON))
+            )
 )
 
 // export const fetchTodos = function() {
