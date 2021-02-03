@@ -472,10 +472,14 @@ var itemsReducer = function itemsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var nextState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SINGLE_POKEMON"]:
-      return Object.assign({}, action.singlePokemon.items, state);
+      Object.values(action.singlePokemon.items).forEach(function (item) {
+        nextState[item.id] = item;
+      });
+      return nextState;
 
     default:
       return state;
@@ -502,13 +506,21 @@ var pokemonReducer = function pokemonReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var nextState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_POKEMON"]:
-      return Object.assign({}, action.pokemon, state);
+      Object.values(action.pokemon).forEach(function (pokemon) {
+        nextState[pokemon.id] = pokemon;
+      }); // newState[pokemon] = action.pokemon;
+
+      return nextState;
+    // return Object.assign({}, action.pokemon, state);
 
     case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SINGLE_POKEMON"]:
-      return Object.assign({}, action.singlePokemon.pokemon, state);
+      nextState[action.singlePokemon.pokemon.id] = action.singlePokemon.pokemon; // return Object.assign({}, action.singlePokemon.pokemon.id, state)
+
+      return nextState;
 
     default:
       return state;
