@@ -1,5 +1,5 @@
 json.pokemon do 
-json.extract! @pokemon, :id, :name, :attack, :defense, :poke_type
+json.extract! @pokemon, :id, :name, :attack, :defense, :poke_type, :move_ids, :item_ids
   begin
     json.image_url asset_path("pokemon_snaps/#{@pokemon.image_url}")
   rescue
@@ -10,7 +10,7 @@ end
 json.moves do 
   @pokemon.moves.each do |move|
     json.set! move.id do
-      json.extract! move, :id, :name 
+      json.extract! move, :id, :name
     end
   end
 end
